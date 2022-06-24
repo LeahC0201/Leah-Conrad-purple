@@ -1,0 +1,12 @@
+How I destroyed the platforms when they touched the collider:
+
+// checks if the gameobject that touched the collider had "Platform" in its name
+if (collision.gameObject.name.Contains("Platform"))
+{
+// Destroys the gameobject
+	Destroy(collision.gameObject);
+} else
+{
+// stuff
+	GameObject.Find("DoodleHead").SetActive(false);
+}
