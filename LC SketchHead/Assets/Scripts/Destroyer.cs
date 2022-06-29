@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
+
+    //Game Over Canvas
+    [Header("Game Over UI Canvas Object")]
+    public GameObject gameOverCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,18 +24,15 @@ public class Destroyer : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         
-        //GameObject.Find("GameController").GetComponent<GameController>().GameOver();
-        //Debug.Log(collision.gameObject.name);
-        
         if (collision.gameObject.name.Contains("Platform"))
         {
 
             Destroy(collision.gameObject);
             collision.gameObject.SetActive(false);
-            Debug.LogWarning("found");
         } else
-        {
-            GameObject.Find("DoodleHead").SetActive(false);
+            {
+                GameObject.Find("DoodleHead").SetActive(false);
+                gameOverCanvas.SetActive(true);
         }
        }
 }

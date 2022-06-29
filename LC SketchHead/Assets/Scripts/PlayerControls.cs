@@ -18,6 +18,13 @@ public class PlayerControls : MonoBehaviour
     //movement difetion of the object
     public float movement = 0f;
     // Start is called before the first frame update
+
+    //Font text
+    [Header("Score Text")]
+    public Text scoreText;
+    //score of game
+    private float topScore = 0.0f;
+
     void Start()
     {
         //variable equals to component Rigidbody2D
@@ -43,6 +50,14 @@ public class PlayerControls : MonoBehaviour
             this.GetComponent <SpriteRenderer>().flipX = true;
         }
         
+        //If players velocity is greater than 0 and position on the y axis is greater than the score
+        if(rb.velocity.y > 0 && transform.position.y > topScore)
+        {
+            //Score equals players position
+            topScore = transform.position.y;
+        }
+        //Text for the score equals to the top score
+        scoreText.text = "Score: " + Mathf.Round(topScore).ToString();
     }
 
     //Fixedupdate called every fixed frame-rate frame.
