@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnCube: {fileID: 4202222944470042122, guid: 2282962cc84cea044a2c841e64639d2c, type: 3}
-  difficulty: 40
+  difficulty: 1
 --- !u!4 &765026123
 Transform:
   m_ObjectHideFlags: 0
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnCube: {fileID: 4202222944470042122, guid: 2282962cc84cea044a2c841e64639d2c, type: 3}
-  difficulty: 40
+  difficulty: 1
 --- !u!4 &2053930739
 Transform:
   m_ObjectHideFlags: 0
