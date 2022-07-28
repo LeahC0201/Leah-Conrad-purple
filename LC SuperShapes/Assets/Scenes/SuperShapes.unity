@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69b5a5069339314b8cf1115fa71ac8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 600
+  moveSpeed: 400
 --- !u!58 &387575012
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -848,6 +848,10 @@ MonoBehaviour:
   - {fileID: 3600819354773241567, guid: b9974bbe1181ab348968ea07c769aa47, type: 3}
   - {fileID: 3417114003247287460, guid: e9a3ccafa5cb3c243b896ab583de24d7, type: 3}
   - {fileID: 5608908145742263239, guid: a7a20bb749b744044bb235ea1e406d4b, type: 3}
+  - {fileID: 5608908145742263239, guid: a95b4994b8ca0ae4a8cda66649ac83e1, type: 3}
+  - {fileID: 3600819354773241567, guid: ca4db47a69693b54f9f78fe6a41cef9f, type: 3}
+  - {fileID: 3417114003247287460, guid: c6292a1c5777de94aa6f2f6ae225ffbf, type: 3}
+  - {fileID: 2876814049339442106, guid: 305145b1e7d0104449a6c539a9bf8c05, type: 3}
   spawnDelay: 2
   spawnTime: 3
   gameOverCanvas: {fileID: 432002037}
