@@ -36,6 +36,13 @@ public class PlayerControls : MonoBehaviour
         {
             //Adds force to the object to jump upwards based on jump power, mass, and gravity
             rb.AddForce(Vector3.up * (jumpPower * rb.mass * rb.gravityScale * 20.0f));
+
+            //If the player position is less than the original position f the player
+            if (transform.position.x < posX)
+            {
+                //Execute GameOver function
+                GameOver();
+            }
         }
     }
 
@@ -48,6 +55,12 @@ public class PlayerControls : MonoBehaviour
             //isGrounded equals true
             isGrounded = true;
         }
+        //If colliders tag equals enemy
+        if (collision.collider.tag == "Enemy")
+        {
+            //Game Over function is called
+            GameOver();
+        }
     }
 
     //When a collider on another object is touching this object's collider
@@ -58,6 +71,36 @@ public class PlayerControls : MonoBehaviour
         {
             //isGrounded equals true
             isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        //If colliders tag equals ground
+        if (collision.collider.tag == "Ground")
+        {
+            //isGrounded equals true (false??)
+            isGrounded = false;
+        }
+    }
+
+    //Game over function
+    void GameOver()
+    {
+        //Game Over function is called from the game manager
+        GameObject.Find("GameController").GetComponent<GameController>().GameOver();
+    }
+
+    //When a collider on another object is touching this object's trigger
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //If triggers tag equals coin
+        if (collision.tag == "Coin")
+        {
+            //Call IncrementScore from GameController
+            GameObject.Find("GameController").GetComponent<GameController>().IncrementScore();
+            //Destroy object
+            Destroy(collision.gameObject);
         }
     }
 }
