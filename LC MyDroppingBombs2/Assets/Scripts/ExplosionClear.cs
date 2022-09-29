@@ -19,7 +19,7 @@ public class ExplosionClear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (particleSmoke.IsAlive())
+        if (!particleSmoke.IsAlive())
         {
             Destroy(gameObject);
         } 

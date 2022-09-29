@@ -17,7 +17,6 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         ResetDelay();
-        //??
         StartCoroutine(EnemyGenerator());
 
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
